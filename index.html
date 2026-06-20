@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday! 🎉</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #fed6e3 0%, #a8c1ef 100%);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Birthday Card Container */
+        .card {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            text-align: center;
+            max-width: 450px;
+            width: 90%;
+            z-index: 10;
+            animation: popIn 1s ease-out;
+        }
+
+        /* Typography & Text Styling */
+        h1 {
+            color: #ff4081;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        p {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .emoji {
+            font-size: 3rem;
+            animation: bounce 2s infinite;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        /* Decorative CSS Cake */
+        .cake {
+            width: 120px;
+            height: 90px;
+            background: #f48fb1;
+            margin: 20px auto;
+            position: relative;
+            border-radius: 10px 10px 0 0;
+            box-shadow: inset 0 15px 0 #f06292;
+        }
+
+        .cake::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 15px;
+            background: #fff;
+            top: 35px;
+            left: 0;
+        }
+
+        .candle {
+            width: 10px;
+            height: 35px;
+            background: #64b5f6;
+            position: absolute;
+            top: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 3px 3px 0 0;
+        }
+
+        .candle::before {
+            content: '';
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            background: #ffb300;
+            border-radius: 50% 50% 20% 50%;
+            top: -14px;
+            left: -2px;
+            transform: rotate(-45deg);
+            animation: flicker 0.5s infinite alternate;
+        }
+
+        /* Background Balloons Animation */
+        .balloon {
+            position: absolute;
+            bottom: -150px;
+            width: 60px;
+            height: 75px;
+            border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+            z-index: 1;
+            animation: floatUp 8s infinite linear;
+        }
+
+        .balloon::before {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 28px;
+            width: 0;
+            height: 0;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+        }
+
+        /* Balloon Variations */
+        .b1 { left: 10%; background: #ff1744; animation-duration: 7s; }
+        .b1::before { border-bottom: 8px solid #ff1744; }
+        
+        .b2 { left: 30%; background: #29b6f6; animation-duration: 9s; animation-delay: 2s; }
+        .b2::before { border-bottom: 8px solid #29b6f6; }
+        
+        .b3 { left: 55%; background: #ab47bc; animation-duration: 6s; animation-delay: 1s; }
+        .b3::before { border-bottom: 8px solid #ab47bc; }
+        
+        .b4 { left: 80%; background: #ffca28; animation-duration: 10s; animation-delay: 3s; }
+        .b4::before { border-bottom: 8px solid #ffca28; }
+
+        /* Keyframe Animations */
+        @keyframes popIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        @keyframes flicker {
+            0% { transform: rotate(-45deg) scale(1); }
+            100% { transform: rotate(-45deg) scale(1.1); opacity: 0.9; }
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-120vh) rotate(20deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Balloons -->
+    <div class="balloon b1"></div>
+    <div class="balloon b2"></div>
+    <div class="balloon b3"></div>
+    <div class="balloon b4"></div>
+
+    <!-- Main Card Content -->
+    <div class="card">
+        <div class="emoji">🎂</div>
+        <h1>Happy Birthday!</h1>
+        
+        <!-- Pure CSS Birthday Cake -->
+        <div class="cake">
+            <div class="candle"></div>
+        </div>
+
+        <p>Wishing you a wonderful day filled with love, laughter, and endless happiness. May all your dreams and wishes come true this year!</p>
+    </div>
+
+</body>
+</html>
