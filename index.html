@@ -159,6 +159,102 @@
             0% { transform: translateY(0) rotate(0deg); opacity: 1; }
             100% { transform: translateY(-120vh) rotate(20deg); opacity: 0; }
         }
+
+        /* Background Cakes and Candles */
+        .background-cake {
+            position: absolute;
+            width: 70px;
+            height: 55px;
+            background: #f48fb1;
+            border-radius: 8px 8px 0 0;
+            z-index: 2;
+            opacity: 0.4;
+            animation: sway 3s ease-in-out infinite;
+        }
+
+        .background-cake::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 12px;
+            background: #fff;
+            top: 25px;
+            left: 0;
+        }
+
+        .background-cake::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 10px;
+            background: #ec407a;
+            top: 12px;
+            left: 0;
+        }
+
+        .bg-candle {
+            position: absolute;
+            width: 6px;
+            height: 25px;
+            background: #64b5f6;
+            border-radius: 2px 2px 0 0;
+            z-index: 3;
+            opacity: 0.5;
+        }
+
+        .bg-candle::before {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #ffb300;
+            border-radius: 50% 50% 15% 50%;
+            top: -10px;
+            left: -2px;
+            animation: flicker 0.5s infinite alternate;
+        }
+
+        .bg-candle::after {
+            content: '';
+            position: absolute;
+            width: 3px;
+            height: 12px;
+            background: #ffeb3b;
+            top: -12px;
+            left: 1.5px;
+            opacity: 0.7;
+            border-radius: 50%;
+            animation: glow 1s infinite alternate;
+        }
+
+        /* Background Cake Positions */
+        .cake1 { top: 15%; left: 8%; transform: rotate(-15deg); }
+        .cake1 .bg-candle { top: -28px; left: 30px; }
+
+        .cake2 { top: 25%; right: 10%; transform: rotate(20deg); }
+        .cake2 .bg-candle { top: -28px; right: 20px; }
+
+        .cake3 { bottom: 20%; left: 5%; transform: rotate(-8deg); }
+        .cake3 .bg-candle { top: -28px; left: 25px; }
+
+        .cake4 { bottom: 15%; right: 8%; transform: rotate(12deg); }
+        .cake4 .bg-candle { top: -28px; right: 18px; }
+
+        .cake5 { top: 50%; left: 3%; transform: rotate(25deg); }
+        .cake5 .bg-candle { top: -28px; left: 28px; }
+
+        .cake6 { top: 40%; right: 5%; transform: rotate(-18deg); }
+        .cake6 .bg-candle { top: -28px; right: 22px; }
+
+        @keyframes sway {
+            0%, 100% { transform: translateY(0) rotate(var(--rotation)); }
+            50% { transform: translateY(-8px) rotate(var(--rotation)); }
+        }
+
+        @keyframes glow {
+            0% { opacity: 0.4; filter: blur(1px); }
+            100% { opacity: 0.9; filter: blur(0px); }
+        }
     </style>
 </head>
 <body>
@@ -168,6 +264,26 @@
     <div class="balloon b2"></div>
     <div class="balloon b3"></div>
     <div class="balloon b4"></div>
+
+    <!-- Background Cakes and Candles -->
+    <div class="background-cake cake1" style="--rotation: -15deg;">
+        <div class="bg-candle"></div>
+    </div>
+    <div class="background-cake cake2" style="--rotation: 20deg;">
+        <div class="bg-candle"></div>
+    </div>
+    <div class="background-cake cake3" style="--rotation: -8deg;">
+        <div class="bg-candle"></div>
+    </div>
+    <div class="background-cake cake4" style="--rotation: 12deg;">
+        <div class="bg-candle"></div>
+    </div>
+    <div class="background-cake cake5" style="--rotation: 25deg;">
+        <div class="bg-candle"></div>
+    </div>
+    <div class="background-cake cake6" style="--rotation: -18deg;">
+        <div class="bg-candle"></div>
+    </div>
 
     <!-- Main Card Content -->
     <div class="card">
